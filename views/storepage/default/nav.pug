@@ -1,0 +1,49 @@
+#nav
+  span#logo-home
+    | Light Armor
+  span#navnav
+    span#icon-hamburger.icon-hamburger
+      i.fa.fa-bars.fa-3x.icon-change(aria-hidden='true')
+    ul#nav-id
+      li
+        a#nav-home(href='/')
+          span.text-nav HOME
+      li
+        a#drpbtn
+          span#dropbtn.text-nav
+            | PRODUCT 
+            span.fa.fa-angle-down
+        ul#navnav-drop
+          li
+            a#drop-text(href='tsirt.html') T-SHIRT
+          li
+            a#drop-text(href='jacket.html') JACKET
+          li
+            a#drop-text(href='') JEANS
+      li
+        a#nav-login(href='#!')
+          span.text-nav ABOUT
+      li
+        if userLogin == true
+            a#drpbtn(href='/account/' + login_username)
+                span#dropbtn.text-nav= login_nama
+            ul#navnav-drop
+              li
+                a#drop-text(href='tsirt.html') T-SHIRT
+              li
+                a#drop-text(href='jacket.html') JACKET
+              li
+                a#drop-text(href='') JEANS
+        else
+            a#nav-login(href='/login')
+                span.text-nav LOGIN
+      li
+        span#nav-cart.nav-cart
+          a(href='#!')
+            i.fa.fa-shopping-cart.fa-2x.nav-cart-logo
+              span.cart-amount#cart-amount= muchOfCart
+    span#nav-cart-resize.nav-cart-resize
+      a(href='#!')
+        i.fa.fa-shopping-cart.fa-2x.nav-cart-logo-resize
+          span.cart-amount#cart-amount= muchOfCart
+          

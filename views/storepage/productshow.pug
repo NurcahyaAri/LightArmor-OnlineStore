@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        include default/head.pug
+        title Document
+    body
+        -var idData = data[0].id_barang;
+        span#main
+            // start of navigation bar
+            include default/nav.pug
+            // end of navigation bar
+            // content
+            #content.container
+                .row
+                    .cart
+                        a(href='#')
+                            i.fa.fa-shopping-cart.fa-3x.cart-logo
+                                span.cart-amount= muchOfCart    
+                    .headlineProduct
+                .container-fluid.product-wrapper-all
+                    .row
+                        #wrapper-image-product.col-md-2.col-sm-2.col-xs-2.col-md-offset-2.col-sm-offset-2.images-product-scrollable
+                            each product in data
+                                if product.gambar != gambar
+                                    .row
+                                        img.img-responsive.center-block.product-preview-click(src='/images/' + product.gambar, id='', alt='', width='512px')
+                            .col-md-4.col-sm-4.product-wrapper.product-wrapper-mobile
+                        .row
+                            img#product-preview.img-responsive.center-block.img-mobile(src='/images/' + gambar, alt='', width='512px')
+                    .row.product-describe(style="font-family:'Open Sans',sans-serif")
+                    
+                    .row
+                    br
+                    br
+                .row
+                    .col-md-offset-1.col-sm-offset-1.col-xs-offset-1
+                        form(action="/product/search/" + data[0].id_barang, method="POST")
+                            button.col-md-3.col-sm-3.col-xs-6.buttomAddToCart#addToCart(type="submit") Add To Cart
+                // end of content
+            include default/footer.pug
+        include default/side.pug
+        script.
+    script(src='/javascripts/script.js')
+                    
+    
