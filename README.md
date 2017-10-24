@@ -46,7 +46,7 @@ Note : - maybe 22 October 2017's bug was dissappear (i thought) i will find any 
 Chanelog:
  - adding routes for checkout
 Bug :
- - Checout still can't get session to print userlogin
+ - Checokut still can't get session to print userlogin
 
 
 
