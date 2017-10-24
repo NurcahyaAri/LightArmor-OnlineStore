@@ -15,19 +15,19 @@
             span.fa.fa-angle-down
         ul#navnav-drop
           li
-            a#drop-text(href='tsirt.html') T-SHIRT
+            a#drop-text(href='/show/tshirt') T-SHIRT
           li
-            a#drop-text(href='jacket.html') JACKET
+            a#drop-text(href='/') JACKET
           li
-            a#drop-text(href='') JEANS
+            a#drop-text(href='/show/jeans') JEANS
       li
         a#nav-login(href='#!')
           span.text-nav ABOUT
       li
         if userLogin == true
-            a#drpbtn(href='/account/' + login_username)
+            a#drpbtnUser(href='/account/' + login_username)
                 span#dropbtn.text-nav= login_nama
-            ul#navnav-drop
+            ul#dropUser
               li
                 a#drop-text(href='tsirt.html') T-SHIRT
               li
@@ -39,11 +39,17 @@
                 span.text-nav LOGIN
       li
         span#nav-cart.nav-cart
-          a(href='#!')
+          a(href='/cart')
             i.fa.fa-shopping-cart.fa-2x.nav-cart-logo
-              span.cart-amount#cart-amount= muchOfCart
+              if inCart
+                span.cart-amount#cart-amount= MuchOnCart
+              else
+                span.cart-amount#cart-amount
     span#nav-cart-resize.nav-cart-resize
-      a(href='#!')
+      a(href='/cart')
         i.fa.fa-shopping-cart.fa-2x.nav-cart-logo-resize
-          span.cart-amount#cart-amount= muchOfCart
+          if inCart
+            span.cart-amount#cart-amount= MuchOnCart
+          else
+            span.cart-amount#cart-amount
           

@@ -13,9 +13,12 @@ html(lang='en')
       #content.container
         .row
           .cart
-            a(href='#')
+            a(href='/cart')
               i.fa.fa-shopping-cart.cart-logo
-                span.cart-amount= muchOfCart
+                if inCart
+                  span.cart-amount= MuchOnCart
+                else
+                  span.cart-amount
           .headline.slide
             div(style='display:block')
               img(src='images/headline2.jpg', alt='')
@@ -33,23 +36,23 @@ html(lang='en')
               .row
                 -for(var j = 0; j < row.length; j++)
                   if row[j].jenis == "baju" && row[j].id_barang !== row[j+1].id_barang
-                    - i++;
+                    //- - i++;
                     - productsbaju.push(row[j]);
                 each products in productsbaju.slice(0, 4)
                   a(href='/product/search/' + products.id_barang)
                     .col-md-2.col-sm-2.col-xs-5.product-wrapper
                       .row
                         if products.gambar
-                          img.img-responsive.center-block(src='images/' + products.gambar, alt='', width='256px')
+                          img.img-responsive.center-block(src='/images/' + products.gambar, alt='', width='256px')
                         else
-                          img.img-responsive.center-block(src='images/image-not-found.gif', alt='', width='256px')
+                          img.img-responsive.center-block(src='/images/image-not-found.gif', alt='', width='256px')
                       .row.center-block.product-desc
                         b= products.namabarang
                       .row.center-block= products.harga
             .row
               .col-md-5.col-sm-4.col-xs-2
               .col-md-2.col-sm-4.col-xs-8
-                a(href='tsirt.html')
+                a(href='/show/tshirt')
                   b.center-block.smore-btn See More
               .col-md-5.col-sm-5.col-xs-2
           .col-md-12.col-sm-12.col-xs-12
@@ -62,21 +65,21 @@ html(lang='en')
                 a(href='')
                   .col-md-2.col-sm-2.col-xs-5.product-wrapper
                     .row
-                      img.img-responsive.center-block(src='images/jacket6.jpg', alt='', width='256px')
+                      img.img-responsive.center-block(src='/images/jacket6.jpg', alt='', width='256px')
                     .row.center-block.product-desc
                       b Produk Name
                     .row.center-block Produk Price
                 a(href='')
                   .col-md-2.col-sm-2.col-xs-5.product-wrapper
                     .row
-                      img.img-responsive.center-block(src='images/jacket2.jpg', alt='', width='256px')
+                      img.img-responsive.center-block(src='/images/jacket2.jpg', alt='', width='256px')
                     .row.center-block.product-desc
                       b Produk Name
                     .row.center-block Produk Price
                 a(href='')
                   .col-md-2.col-sm-2.col-xs-5.product-wrapper
                     .row
-                      img.img-responsive.center-block(src='images/jacket3.jpg', alt='', width='256px')
+                      img.img-responsive.center-block(src='/images/jacket3.jpg', alt='', width='256px')
                     .row.center-block.product-desc
                       b Produk Name
                     .row.center-block Produk Price
@@ -109,16 +112,16 @@ html(lang='en')
                     .col-md-2.col-sm-2.col-xs-5.product-wrapper
                       .row
                         if products.gambar
-                          img.img-responsive.center-block(src='images/' + products.gambar, alt='', width='128px')
+                          img.img-responsive.center-block(src='/images/' + products.gambar, alt='', width='128px')
                         else
-                          img.img-responsive.center-block(src='images/image-not-found.gif', alt='', width='128px')
+                          img.img-responsive.center-block(src='/images/image-not-found.gif', alt='', width='128px')
                       .row.center-block.product-desc
                         b= products.namabarang
                       .row.center-block= products.harga
               .row
                 .col-md-5.col-sm-4.col-xs-2
                 .col-md-2.col-sm-4.col-xs-8
-                  a(href='tsirt.html')
+                  a(href='/show/jeans')
                     b.center-block.smore-btn See More
                 .col-md-5.col-sm-5.col-xs-2
       // start of footer

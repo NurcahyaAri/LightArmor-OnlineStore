@@ -251,4 +251,45 @@ $(document).ready(function(){
             $('body').load(status);
         });
     });
+
+    $('#removeLoginMessages').click(function(){
+        $('.messages-info').removeClass();
+        document.getElementsByClassName('messages')[0].style.display = 'none';
+        $('.removeInLoginMessages').removeClass();
+    })
+
+    // $('#imgOption').mouseleave(function(){
+    //     $('#imgText').hide();
+    // })
+
+    // $('#imgText').mouseenter(function(){
+    //     $('#imgText').show();
+    // })
+
+    // $('#imgOption').mouseenter(function(){
+    //     $('#imgText').show();
+    // })
+
+    // delete data in cart
+    var delCart = $("#deleteDataInCart");
+    deleteCart = function(id_barang){
+        alert("hello" + id_barang)
+        $.ajax({
+            url: "/cart/" + id_barang,
+            type: "POST",
+            data: {id : id_barang},
+            dataType: "html",
+            success: function(html) { 
+                location.reload();          
+            }    
+          });
+          
+        //   request.done(function(msg) {
+        //     window.location.href = '/cart'
+        //   });
+          
+        //   request.fail(function(jqXHR, textStatus) {
+        //     alert( "Request failed: " + textStatus );
+        //   });
+    }
 });

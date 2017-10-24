@@ -11,6 +11,12 @@ html
         .container-fluid
             .row
                 .col-md-6.col-sm-8.col-xs-12.col-md-offset-3.col-sm-offset-2
+                    if messages.info
+                        .container.bg-danger.messages-info
+                            .row
+                                b
+                                    p.messages= messages.info
+                                i.fa.fa-times.removeInLoginMessages#removeLoginMessages
                     .panel.panel-login
                         .panel-heading
                             .row

@@ -12,6 +12,31 @@ a{
     text-decoration: none;
 }
 
+.messages-info{
+    border-radius: 2px;
+    /* align-content: center; */
+    width: 100%;
+    height: 50px;
+    padding: 15px;
+    display: table-cell;
+}
+
+.removeInLoginMessages:hover{
+    background: grey;
+    opacity: 0.8;
+}
+
+.removeInLoginMessages{
+    float: right;
+    margin: 5px;
+}
+
+.messages{
+    margin-left: 15px;
+    display: inline;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
 a:hover{
     text-decoration: none !important;
 }
@@ -24,6 +49,12 @@ a:hover{
 /* Main Theme  */
 /* header and banner placed here */
 /* banner  */
+
+#main{
+    overflow-x: hidden !important;
+}
+
+.container
 
 .headlineProduct{
     width: 100%;
@@ -207,6 +238,10 @@ a:hover{
     height: 50px;
 }
 
+#dropUser{
+    display: inline-block;
+}
+
 #nav ul li ul li a:hover{
     color: lightgrey;
 }
@@ -243,6 +278,24 @@ a:hover{
 /* end of navbar  */
 /* end of header and banner  */
 /* Main Theme  */
+
+.imgOption{
+    background: grey;
+}
+
+#imgProfileBackground{
+}
+
+.imgText{
+    position: relative;
+    display: none;
+    left: -100px;
+    top: 110px;
+    background: grey;
+    padding-bottom: 10px;
+    padding-top: 5px;
+    padding-right: 11px; 
+}
 
 /* Side Theme  */
 #side{
@@ -349,6 +402,11 @@ a:hover{
 
 .product-describe{
     margin-top: 100px;
+}
+
+.cartTable tbody tr td{
+    padding-top: 50px !important;
+    padding-bottom: 50px !important;
 }
 
 .buttomAddToCart{
@@ -598,6 +656,27 @@ a .smore-btn{
     
 }
 
+.checkOutButtom{
+    background: rgb(243, 243, 243);
+    color: black;
+    width: 100%;
+    display: inline-block;
+    height: 50px;
+}
+
+.checkOutButtom:hover{
+    background: rgb(235, 235, 235);
+}
+
+.checkOutButtom p{
+    margin: 15px 0 15px 0;
+}
+
+.deleteDataInCart{
+    border: none;
+    background: transparent;
+}
+
 .cart-amount{
     font-size: 10pt;
     margin-bottom: -5px;
@@ -722,9 +801,11 @@ a:hover .smore-btn{
 /* start of footer  */
 .footer{
     width: 100%;
-    /* background: rgb(243, 243, 243); */
+    background: rgb(243, 243, 243);
     height: 300px;
+    margin-top: 200px;
     padding-top: 50px;
+    padding-bottom: 25px;
     /* border-top: 1px solid grey; */
 }
 

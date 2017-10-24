@@ -7,7 +7,7 @@ html(lang="en")
         include default/head.pug
         title Document
     body
-        -var idData = data[0].id_barang;
+        //- -var idData = data[0].id_barang;
         span#main
             // start of navigation bar
             include default/nav.pug
@@ -16,9 +16,12 @@ html(lang="en")
             #content.container
                 .row
                     .cart
-                        a(href='#')
+                        a(href='/cart')
                             i.fa.fa-shopping-cart.fa-3x.cart-logo
-                                span.cart-amount= muchOfCart    
+                                if inCart
+                                    span.cart-amount= MuchOnCart
+                                else
+                                    span.cart-amount    
                     .headlineProduct
                 .container-fluid.product-wrapper-all
                     .row

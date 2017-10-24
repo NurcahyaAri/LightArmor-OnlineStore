@@ -8,9 +8,16 @@ var session = require('express-session');
 var flash = require('express-flash');
 
 
-var store = require('./routes/store');
-var users = require('./routes/users');
+//router indexing
+var store = require('./routes/storeIndex');
+var users = require('./routes/storeProfile');
 var adminIndex = require('./routes/admin_index');
+var login = require('./routes/storeLogin');
+var product = require('./routes/storeProducts');
+var cart = require('./routes/storeCart');
+var register = require('./routes/storeRegisterNewUser');
+var show = require('./routes/showAllProduct');
+var checkOut = require('./routes/storeCheckOut');
 
 var app = express();
 
@@ -25,10 +32,24 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(session({secret: "it's a secret word"}));
+app.set('trust proxy', 1);
+app.use(session({
+                  secret: "it's a secret word",
+                  resave: false,
+                  saveUninitialized: true,
+                  cookie: { secure: false, maxAge: 2628000000 }
+                }));
+app.use(flash());
 
+// router setting up
 app.use('/', store);
-app.use('/users', users);
+app.use('/', login);
+app.use('/', product);
+app.use('/', cart);
+app.use('/', users);
+app.use('/', register);
+app.use('/', checkOut);
+app.use('/show', show);
 app.use('/admin', adminIndex);
 
 // catch 404 and forward to error handler

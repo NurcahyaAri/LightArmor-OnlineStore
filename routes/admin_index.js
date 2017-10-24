@@ -1,7 +1,8 @@
 var express = require('express');
 var router = express.Router();
 var crypto = require('crypto');
-var connect = require('../Database/connect');
+var connect = require('../Model/connect');
+
 
 var secret = 'jdmforlife';
 
